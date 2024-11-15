@@ -8,7 +8,7 @@ class GSet {
 public:
     GSet();
     void add(const std::string& item);
-    GSet merge(const GSet& other);
+    GSet& merge(const GSet& other);
     std::unordered_set<std::string> get() const;
 
 private:

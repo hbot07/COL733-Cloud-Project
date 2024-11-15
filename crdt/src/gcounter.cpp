@@ -1,6 +1,8 @@
 #include <unordered_map>
 #include <string>
 #include <stdexcept>
+#include "headers/gcounter.h"
+
 
 Gcounter::Gcounter(const std::string& id = std::to_string(std::hash<std::string>{}(std::to_string(reinterpret_cast<size_t>(this))))){
    this->id = id;
@@ -32,5 +34,5 @@ int Gcounter::get(){
         }
         this->counts[element.first] = max(cand,element.second);
     }
-   return this;
+   return *this;
  }
