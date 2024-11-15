@@ -8,7 +8,7 @@ class GCounter {
 public:
     GCounter(const std::string& id = std::to_string(std::hash<std::string>{}(std::to_string(reinterpret_cast<size_t>(this)))));
     void add(int value);
-    GCounter merge(const GCounter& other);
+    GCounter& merge(const GCounter& other);
     int get() const;
 
 private:
